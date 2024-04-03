@@ -1,6 +1,11 @@
-<div *ngIf="mission">
-    <h2>{{ mission.mission_name }}</h2>
-    <p>{{ mission.details }}</p>
-    <p>Launch Year: {{ mission.launch_year }}</p>
-  </div>
-  
+<!-- src/app/app.component.html -->
+
+<!-- The title property is bound to the template -->
+<h1>{{ title }}</h1>
+
+<!-- This is just a simple example, you can modify the template as needed -->
+<p>Welcome to my Angular application!</p>
+
+<app-mission-filter></app-mission-filter>
+<app-missiondetails></app-missiondetails>
+<app-mission-list></app-mission-list>

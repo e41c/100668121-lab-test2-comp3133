@@ -7,14 +7,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MissionListComponent } from './missionlist/missionlist.component';
-import { MissionFilterComponent } from './missionfilter/missionfilter.component';
-import { MissiondetailsComponent } from './missiondetails/missiondetails.component'; // Adjust the path accordingly
+import { MissionFilterComponent } from './missionfilter/missionfilter.component'; // Adjusted the path accordingly
+import { MissiondetailsComponent } from './missiondetails/missiondetails.component'; // Adjusted the path accordingly
 
 @NgModule({
   declarations: [
     AppComponent,
     MissionListComponent,
-    MissionFilterComponent,
+    MissionFilterComponent, // Adjusted component name
     MissiondetailsComponent
   ],
   imports: [
