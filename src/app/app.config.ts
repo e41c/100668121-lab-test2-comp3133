@@ -1,9 +1,10 @@
-import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
+// app/src/app/app.config.ts
+// app.config.ts
+export const AppConfig = {
+  apiUrl: 'https://api.spacexdata.com/v3'
+};
 
-import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
-
-export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration()]
+// app.config.server.ts
+export const ServerConfig = {
+  port: 3000
 };

@@ -1,21 +1,27 @@
 // src/app/missionlist/missionlist.component.ts
 
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { SpaceXApiService } from '../network/spaceexapi.service';
+import { Mission } from '../models/mission';
 
 @Component({
-  selector: 'app-missionlist',
+  selector: 'app-mission-list',
   templateUrl: './missionlist.component.html',
   styleUrls: ['./missionlist.component.css']
 })
-export class MissionlistComponent implements OnInit {
-  missions: any;
+export class MissionListComponent implements OnInit {
+  missions: Mission[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private spaceXApiService: SpaceXApiService) { }
 
-  ngOnInit() {
-    this.http.get('https://api.spacexdata.com/v3/launches').subscribe(res => {
-      this.missions = res;
+  ngOnInit(): void {
+    this.loadMissions();
+  }
+
+  loadMissions(): void {
+    this.spaceXApiService.getLaunches().subscribe(missions => {
+      this.missions = missions;
     });
   }
 }
+
